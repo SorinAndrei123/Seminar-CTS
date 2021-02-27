@@ -14,6 +14,13 @@ private int inaltime;
 	public void setInaltime(int inaltime) {
 		this.inaltime = inaltime;
 	}
+
+	@Override
+	public void merge() {
+		// TODO Auto-generated method stub
+		System.out.print("merge cu capul pe sus");
+		
+	}
 	
 
 }

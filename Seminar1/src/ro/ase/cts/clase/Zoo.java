@@ -26,6 +26,11 @@ public class Zoo {
 			this.zookeeper.feed(a);
 		}
 	}
+	public void deplasareAnimale() {
+		for(Animal a: listaAnimale) {
+			a.merge();
+		}
+	}
 	
 	
 
