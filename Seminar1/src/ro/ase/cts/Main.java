@@ -22,6 +22,7 @@ public class Main {
 		zoo.adaugareAnimal(g2);
 		zoo.hranireToateAnimalele();
 		zoo.deplasareAnimale();
+	
 		
 
 	}
