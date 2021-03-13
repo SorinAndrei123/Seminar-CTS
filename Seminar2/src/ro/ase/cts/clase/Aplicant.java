@@ -7,7 +7,7 @@ public abstract class Aplicant{
 	protected int punctaj;
 	protected int nr_proiecte;
 	protected String[] denumireProiect;
-	
+
 	
 	public String getNume() {
 		return nume;
@@ -61,6 +61,18 @@ public abstract class Aplicant{
 	}
 	public void setNr_proiecte(int nr_proiecte) {
 		this.nr_proiecte = nr_proiecte;
+	}
+	public abstract void afisareSumaFinantata();
+	public  String compunereStringSumaFinantata(int suma,String tipAplicant) {
+		StringBuilder stringBuilder=new StringBuilder();
+		stringBuilder.append(tipAplicant);
+		stringBuilder.append(getNume());
+		stringBuilder.append(" ");
+		stringBuilder.append(getPrenume());
+		stringBuilder.append(" primeste");
+		stringBuilder.append(suma);
+		stringBuilder.append(" Euro/zi in proiect.");
+		return stringBuilder.toString();
 	}
 
 }
