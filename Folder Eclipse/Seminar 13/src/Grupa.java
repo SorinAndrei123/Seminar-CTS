@@ -11,7 +11,12 @@ public class Grupa {
     private int nrGrupa;
 
     public Grupa(int nrGrupa){
-        this.nrGrupa=nrGrupa;
+    	if (nrGrupa >= 1000 && nrGrupa <= 1100) {
+    		this.nrGrupa=nrGrupa;
+    	}
+    	else {
+    		throw new IllegalArgumentException();
+    	}
         studenti=new ArrayList<>();
     }
 
@@ -31,15 +36,23 @@ public class Grupa {
     }
 
     public float getPromovabilitate(){
+        if (studenti.size() == 0) {
+        	return 0;
+        }
         int nrRestantieri=0;
         for(IStudent student:studenti){
             if(student.areRestante()){
                 nrRestantieri++;
             }
         }
-        return studenti.size()/nrRestantieri;
+        return (studenti.size() - nrRestantieri) / (float)(studenti.size());
     }
-    
-    
-    
+
+	public List<IStudent> getStudenti() {
+		return studenti;
+	}
+
+	public int getNrGrupa() {
+		return nrGrupa;
+	}
 }
